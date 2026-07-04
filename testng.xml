@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SmokeTestSuite" sequence="tests" thread-count="3">
+
+    <!-- 1. Chrome Smoke Execution -->
+    <test name="Smoke-Chrome">
+        <parameter name="browser" value="chrome" />
+        <groups>
+            <run>
+                <include name="smoke" />
+            </run>
+        </groups>
+        <classes> 
+      <class name="test.BaseTest"/>
+      <class name="test.LoginTest"/>
+        </classes>
+    </test>
+
+
+    <!-- 2. Firefox Smoke Execution -->
+    <test name="Smoke-Firefox">
+        <parameter name="browser" value="firefox" />
+        <groups>
+            <run>
+                <include name="smoke" />
+            </run>
+        </groups>
+        <classes>
+      <class name="test.BaseTest"/>
+      <class name="test.LoginTest"/>
+        </classes>
+    </test>
+</suite>
+
+
+<!-- <?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test parallel ="classes" name="Test">
+  <groups>
+  <run>
+  <include name = "smoke"/>
+  </run>
+  </groups>
+    <classes>
+      <class name="test.BaseTest"/>
+      <class name="test.LoginTest"/>
+      
+  </classes>
+  </test> --> <!-- Test -->
+<!-- </suite>  --> <!-- Suite -->
